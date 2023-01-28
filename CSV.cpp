@@ -18,7 +18,7 @@ using namespace std ;
         } ;
 
 
-        string CSV:: readFileIntoString(const string path) {
+        string CSV:: readFileIntoString(const string &path) {
             auto ss = ostringstream{};
             ifstream input_file(path);
             if (!input_file.is_open()) {
@@ -29,7 +29,7 @@ using namespace std ;
             return ss.str();
         } ;
 
-        vector<string> CSV:: split(const string chaine, char delimiteur){
+        vector<string> CSV:: split(const string &chaine, char delimiteur){
             vector<string>elements ;
             stringstream ss(chaine);
             string sousChaine;
