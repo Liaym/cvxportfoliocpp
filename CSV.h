@@ -1,20 +1,23 @@
 // reading a csv file
+# pragma once
 #include <iostream>
 #include <fstream> // For ofstream using
 #include <sstream> // for istringstream using
 #include <string>
 #include <vector>
 
-using namespace std ; 
-class ReadCVSFile {
+class CSV {
+    private :
+        std::vector<std::string> contents ;
+        std::string s_contents ;
     public :
         // constructors
-        ReadCVSFile() ;
-        ReadCVSFile(const string &path){}
-    private :
-        vector<string> contents ;
-        string s_contents ;
+        CSV() ;
+        CSV(const std ::string path);
+
         // member functions 
-        string readFileIntoString(const string& path) {}
-        vector<string> split(const string &chaine, char delimiteur, vector<string>&elements){}
+        std::string readFileIntoString(const std::string  path) ;
+        std::vector<std::string> split(const std::string chaine, char delimiteur);
+        std::string get_scontent () ;
+        std::vector <std::string> get_vcontent (); 
 };
