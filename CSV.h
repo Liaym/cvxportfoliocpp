@@ -20,5 +20,4 @@ class CSV {
         std::vector<std::string> split(const std::string &chaine, char delimiteer);
         std::string get_scontent () ;
         std::vector <std::string> get_vcontent ();
-        std::string concatenated_content(int nrows);
 };

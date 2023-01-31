@@ -60,7 +60,6 @@ void from_csvmatrix(const std::vector < std::string > & vec, quadprogpp::Matrix 
   int rows = vec.size();
   int cols = 0;
 
-  // count the number of columns in the first row
   std::istringstream iss(vec[0]);
   while (iss >> std::ws && (iss.peek() != EOF)) {
     double temp;
