@@ -11,17 +11,17 @@
 
 int main() {
 
-  CSV G_matrix("matrix.csv");
+  CSV G_matrix("./data/matrix.csv");
 
-  CSV R_vector("returns.csv");
+  CSV R_vector("./data/returns.csv");
 
-  CSV CE_matrix("equality_constraints_matrix.csv");
+  CSV CE_matrix("./data/equality_constraints_matrix.csv");
 
-  CSV CI_matrix("inequality_constraints_matrix.csv");
+  CSV CI_matrix("./data/inequality_constraints_matrix.csv");
 
-  CSV ce0_vector("equality_constraints_vector.csv");
+  CSV ce0_vector("./data/equality_constraints_vector.csv");
 
-  CSV ci0_vector("inequality_constraints_vector.csv");
+  CSV ci0_vector("./data/inequality_constraints_vector.csv");
 
   std::vector < std::string > G_contents {
     G_matrix.get_vcontent()
