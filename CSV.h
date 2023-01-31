@@ -15,9 +15,10 @@ class CSV {
         CSV() ;
         CSV(const std ::string path);
 
-        // member functions 
+        // member functions
         std::string readFileIntoString(const std::string  &path) ;
-        std::vector<std::string> split(const std::string &chaine, char delimiteur);
+        std::vector<std::string> split(const std::string &chaine, char delimiteer);
         std::string get_scontent () ;
-        std::vector <std::string> get_vcontent (); 
+        std::vector <std::string> get_vcontent ();
+        std::string concatenated_content(int nrows);
 };
