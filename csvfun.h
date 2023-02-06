@@ -6,7 +6,7 @@
 
 #include "CSV.h"
 
-#include "test_dir/QuadProg++.h"
+#include "QuadProg++.h"
 
 
 CSV::CSV() {

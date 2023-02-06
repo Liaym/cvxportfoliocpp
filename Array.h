@@ -9,6 +9,7 @@
 #if !defined(_ARRAY_H)
 #define _ARRAY_H
 
+# pragma once
 #include <set>
 #include <stdexcept>
 #include <iostream>
