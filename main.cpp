@@ -6,22 +6,26 @@
 
 #include <vector>
 
-#include "csvfun.h"
+#include "CSV.cpp"
+
+#include "QuadProg++.cpp"
+
+#include "QuadProg++.h"
 
 
 int main() {
 
-  CSV G_matrix("matrix.csv"); // initialisation de la matrice de variance-covariance
+  CSV G_matrix("./data/matrix.csv"); // initialisation de la matrice de variance-covariance
 
-  CSV R_vector("returns.csv"); // initialisation du vecteur des retours
+  CSV R_vector("./data/returns.csv"); // initialisation du vecteur des retours
 
-  CSV CE_matrix("equality_constraints_matrix.csv"); // initialisation de la (transposée) de la matrice des contraintes d'inegalité
+  CSV CE_matrix("./data/equality_constraints_matrix.csv"); // initialisation de la (transposée) de la matrice des contraintes d'inegalité
 
-  CSV CI_matrix("inequality_constraints_matrix.csv"); // initialisation de la (transposée) de la matrice des contraintes d'inégalités
+  CSV CI_matrix("./data/inequality_constraints_matrix.csv"); // initialisation de la (transposée) de la matrice des contraintes d'inégalités
 
-  CSV ce0_vector("equality_constraints_vector.csv"); // initialisation du vecteur des contraintes d'égalités
+  CSV ce0_vector("./data/equality_constraints_vector.csv"); // initialisation du vecteur des contraintes d'égalités
 
-  CSV ci0_vector("inequality_constraints_vector.csv"); // initialisation du vecteur des contraintes d'inégalités
+  CSV ci0_vector("./data/inequality_constraints_vector.csv"); // initialisation du vecteur des contraintes d'inégalités
 
 
   // On récupère les données contenues dans les matrices et vecteurs qui viennent d'être initialisés
