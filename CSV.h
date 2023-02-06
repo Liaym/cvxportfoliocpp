@@ -1,8 +1,8 @@
 // reading a csv file
 # pragma once
 #include <iostream>
-#include <fstream> // For ofstream using
-#include <sstream> // for istringstream using
+#include <fstream> // For using ofstream
+#include <sstream> // for using istringstream
 #include <string>
 #include <vector>
 
@@ -20,4 +20,5 @@ class CSV {
         std::vector<std::string> split(const std::string &chaine, char delimiteer);
         std::string get_scontent () ;
         std::vector <std::string> get_vcontent ();
+        std::string concatenated_content(int nrows);
 };

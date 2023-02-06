@@ -11,17 +11,20 @@
 
 int main() {
 
-  CSV G_matrix("./data/matrix.csv");
+  CSV G_matrix("matrix.csv"); // initialisation de la matrice de variance-covariance
 
-  CSV R_vector("./data/returns.csv");
+  CSV R_vector("returns.csv"); // initialisation du vecteur des retours
 
-  CSV CE_matrix("./data/equality_constraints_matrix.csv");
+  CSV CE_matrix("equality_constraints_matrix.csv"); // initialisation de la (transposée) de la matrice des contraintes d'inegalité
 
-  CSV CI_matrix("./data/inequality_constraints_matrix.csv");
+  CSV CI_matrix("inequality_constraints_matrix.csv"); // initialisation de la (transposée) de la matrice des contraintes d'inégalités
 
-  CSV ce0_vector("./data/equality_constraints_vector.csv");
+  CSV ce0_vector("equality_constraints_vector.csv"); // initialisation du vecteur des contraintes d'égalités
 
-  CSV ci0_vector("./data/inequality_constraints_vector.csv");
+  CSV ci0_vector("inequality_constraints_vector.csv"); // initialisation du vecteur des contraintes d'inégalités
+
+
+  // On récupère les données contenues dans les matrices et vecteurs qui viennent d'être initialisés
 
   std::vector < std::string > G_contents {
     G_matrix.get_vcontent()
@@ -47,6 +50,7 @@ int main() {
     ci0_vector.get_vcontent()
   };
 
+
   quadprogpp::Matrix < double > G, CE, CI;
   quadprogpp::Vector < double > R, ce0, ci0;
 
@@ -63,10 +67,12 @@ int main() {
 
   x.resize(n);
 
-  std::cout << "f: " << solve_quadprog(G, R, CE, ce0, CI, ci0, x) << std::endl;
-  std::cout << "x: " << x << std::endl;
+  // Appel de la méthode de résolution du programme d'optimisation quadratique
+
+ solve_quadprog(G, R, CE, ce0, CI, ci0, x);
+
+ std::cout << "La solution optimale à ce problème d'optimisation est obtenue en : " << std::endl << std::endl;
   for (int i = 0; i < n; i++)
-    std::cout << x[i] << ' ';
-  std::cout << std::endl;
+    std::cout << "Choisissant "<<x[i] * 100 << " %" <<" de l'actif "<< i << std::endl;
 
 }

@@ -14,13 +14,11 @@ CSV::CSV() {
 };
 
 CSV::CSV(const std::string path) {
-  //string filename(path);
   std::string file_contents;
   file_contents = CSV::readFileIntoString(path);
   std::vector < std::string > vect;
   char delimiter = '\n';
   vect = CSV::split(file_contents, delimiter);
-  //vect[vect.size()-1].pop_back() ;
   contents = vect;
   for (int i = 0; i < vect.size(); i++) {
     s_contents.append(vect[i]);
@@ -56,10 +54,13 @@ std::vector < std::string > CSV::get_vcontent() {
   return ( * this).contents;
 };
 
+// Récupération des données depuis un .csv de matrices (type quadprogpp::Matrix)
+
 void from_csvmatrix(const std::vector < std::string > & vec, quadprogpp::Matrix < double > & mat) {
   int rows = vec.size();
   int cols = 0;
 
+  // count the number of columns in the first row
   std::istringstream iss(vec[0]);
   while (iss >> std::ws && (iss.peek() != EOF)) {
     double temp;
@@ -81,6 +82,9 @@ void from_csvmatrix(const std::vector < std::string > & vec, quadprogpp::Matrix 
     }
   }
 }
+
+
+// Récupération des données depuis un .csv de vecteurs (type quadprogpp::Vector)
 
 void from_csvvector(std::vector < std::string > & data, quadprogpp::Vector < double > & vec) {
   int n = data.size();
